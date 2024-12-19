@@ -1,0 +1,28 @@
+#include <cstdio>
+#include <cstring>
+
+int main() {
+    char greeting[200];
+    char reverse[200]; // Array to store the reversed string
+    int len, n;
+
+    // Prompt user for input
+    printf("Enter the string: ");
+    scanf("%s", greeting);
+
+    len = strlen(greeting);
+    n = len - 1;
+   // Reverse the string
+    for (int i = 0; i < len; i++) {
+        reverse[i] = greeting[n];
+        n--;
+    }
+   
+    // Check if the original string is equal to the reversed string
+    if (strcmp(greeting, reverse) == 0) {
+        printf("Palindrome\n");
+    } else {
+        printf("Not a palindrome\n");
+    }
+    return 0;
+}
