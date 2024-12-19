@@ -1,0 +1,25 @@
+#include <cstdio>
+#include <cstring>
+#include <cstdlib>  // For system() function
+// Function to clear the screen based on the operating system
+void clearScreen() {
+        system("cls");  
+}
+int main() 
+{
+    clearScreen();  // Call the function to clear the screen
+   char greeting[200]; 
+    printf("Enter the string: ");
+    scanf("%199s", greeting);  // Limit input to avoid overflow
+    int len = strlen(greeting);
+    int n = len - 1;
+    for (int i = 0; i < (len / 2); i++) {
+        // Swap characters
+        char temp = greeting[i];
+        greeting[i] = greeting[n];
+        greeting[n] = temp;
+        n = n - 1; 
+    }
+    printf("Reversed string: %s\n", greeting);
+    return 0;
+}
