@@ -1,0 +1,20 @@
+#include <cstdio>
+#include <cstring>
+int main() {
+    char str[200], ch;
+    int i, j, len;
+    printf("Enter the String: ");
+    scanf("%s", str); 
+    len = strlen(str);
+    for (i = 0; i < len - 1; i++) {
+        for (j = 0; j < (len - i - 1); j++) {
+            if (str[j] > str[j + 1]) {
+                ch = str[j];
+                str[j] = str[j + 1];
+                str[j + 1] = ch;
+            }
+        }
+    }
+     printf("\nString in Ascending Order: %s\n", str);
+    return 0;
+}
